@@ -1,0 +1,16 @@
+{
+    "name": "depthlib",
+    "version": "0.1.0",
+    "description": "Application for From the Depths mod creation",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": "LameGrape/DepthLib",
+    "author": "EpicRaisin",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/LameGrape/DepthLib/issues"
+    },
+    "homepage": "https://github.com/LameGrape/DepthLib#readme"
+}

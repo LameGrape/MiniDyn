@@ -8,8 +8,8 @@ function createWindow(file, options) {
 
 app.whenReady().then(() => {
     createWindow("src/index.html", {
-        width: 800,
-        height: 600
+        width: 1600,
+        height: 900
     })
 })
 

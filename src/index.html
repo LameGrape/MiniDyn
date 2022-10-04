@@ -15,11 +15,13 @@
             <span id="title-poly">poly</span><span id="title-2d">2d</span>
         </wintitle>
         <winbuttons>
-            <img src="assets/titlebar/minimize.png" id="minimize" onclick="minimize()">
-            <img src="assets/titlebar/maximize.png" id="maximize" onclick="maximize()">
-            <img src="assets/titlebar/close.png" id="close" onclick="quit()">
+            <img src="assets/titlebar/minimize.png" id="minimize" onclick="minimize()" ondragstart="return false">
+            <img src="assets/titlebar/maximize.png" id="maximize" onclick="maximize()" ondragstart="return false">
+            <img src="assets/titlebar/close.png" id="close" onclick="quit()" ondragstart="return false">
         </winbuttons>
     </titlebar>
+
+    <canvas id="canvas" width="1600" height="900"></canvas>
 
     <script src="scripts/misc.js"></script>
 </body>

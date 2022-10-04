@@ -18,6 +18,7 @@
 }
 
 body {
+    margin-top: 48px;
     font-family: sans-serif;
     background: var(--main);
 }
@@ -42,7 +43,6 @@ winbuttons {
     top: 0px;
     right: 0px;
     display: inline-block;
-    user-select: all;
 }
 
 winbuttons img {
@@ -67,4 +67,12 @@ winbuttons img:hover {
     font-family: kingthings;
     color: var(--lightBlue);
     font-size: 18pt;
+}
+
+
+/* Canvas */
+
+#canvas {
+    position: absolute;
+    background: url(../assets/canvas/grid.png);
 }

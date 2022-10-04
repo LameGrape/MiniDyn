@@ -3,17 +3,34 @@
     src: url("../assets/Kingthings Clarity.TTF");
 }
 
-body {
-    margin-top: 48px;
-    font-family: sans-serif;
+:root,
+ :root.light {
+    --main: #C3D1D8;
+    --secondary: #8EA6B2;
+    --neutral: #527A8C;
+    --lightBlue: #38ACFF;
+    --dimmerBlue: #2F92D8;
 }
+
+:root.dark {
+    --main: #27363D;
+    --secondary: #415A66;
+}
+
+body {
+    font-family: sans-serif;
+    background: var(--main);
+}
+
+
+/* Titlebar */
 
 titlebar {
     z-index: 10000;
     position: fixed;
     top: 0px;
     left: 0px;
-    background: #527A8C;
+    background: var(--neutral);
     width: 100vw;
     height: 40px;
     user-select: none;
@@ -40,7 +57,7 @@ winbuttons img:hover {
 #title-poly {
     font-weight: 900;
     font-family: kingthings;
-    color: #C3D1D8;
+    color: var(--main);
     font-size: 18pt;
     margin-left: 8px;
 }
@@ -48,6 +65,6 @@ winbuttons img:hover {
 #title-2d {
     font-weight: 900;
     font-family: kingthings;
-    color: #38ACFF;
+    color: var(--lightBlue);
     font-size: 18pt;
 }

@@ -1,0 +1,53 @@
+@font-face {
+    font-family: kingthings;
+    src: url("../assets/Kingthings Clarity.TTF");
+}
+
+body {
+    margin-top: 48px;
+    font-family: sans-serif;
+}
+
+titlebar {
+    z-index: 10000;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: #527A8C;
+    width: 100vw;
+    height: 40px;
+    user-select: none;
+    -webkit-app-region: drag;
+}
+
+winbuttons {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: inline-block;
+    user-select: all;
+}
+
+winbuttons img {
+    margin: none;
+    -webkit-app-region: none;
+}
+
+winbuttons img:hover {
+    filter: brightness(75%);
+}
+
+#title-poly {
+    font-weight: 900;
+    font-family: kingthings;
+    color: #C3D1D8;
+    font-size: 18pt;
+    margin-left: 8px;
+}
+
+#title-2d {
+    font-weight: 900;
+    font-family: kingthings;
+    color: #38ACFF;
+    font-size: 18pt;
+}

@@ -12,7 +12,8 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false
-        }
+        },
+        icon: path.join(__dirname, 'build/icon.png')
     })
     const ipc = electron.ipcMain
     ipc.on("maximize", () => {
@@ -27,6 +28,11 @@ const createWindow = () => {
     })
     ipc.on("close", () => {
         app.quit()
+    })
+
+    window.webContents.setWindowOpenHandler(details => {
+        require('electron').shell.openExternal(details.url)
+        return { action: 'deny' }
     })
 
     window.loadFile("src/index.html")

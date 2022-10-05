@@ -76,4 +76,5 @@ winbuttons img:hover {
 #canvas {
     position: absolute;
     background: url(../assets/canvas/grid.png);
+    margin: auto;
 }

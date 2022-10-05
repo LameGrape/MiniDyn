@@ -1,0 +1,22 @@
+010207 - poly2d version image was saved in
+177778 - Aspect ratio
+01B - Palette count
+FFFFFF000000B200FF - Palette colors
+poly - Polygon start
+4BAF12C00BD7 - Polygon points
+si004 - Stroke palette index
+shB200FF - Stroke hex color
+sw03D - Stroke width
+saFF - Stroke alpha
+fi002 - Fill palette index
+fhFF0000 - Fill hex color
+faBF - Fill Alpha
+cl - Closed shape
+end - End shape
+line - Line start
+4BAF12C00BD7 - Line points
+si004 - Stroke palette index
+shB200FF - Stroke hex color
+sw03D - Stroke width
+saFF - Stroke alpha
+end - End shape

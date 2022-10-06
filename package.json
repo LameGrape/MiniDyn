@@ -1,18 +1,18 @@
 {
-    "name": "poly2d",
+    "name": "polynode",
     "version": "0.1.0",
-    "description": "Vector art program",
+    "description": "Electron game engine",
     "main": "main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "repository": "LameGrape/poly2d",
+    "repository": "LameGrape/polynode",
     "author": "EpicRaisin",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/LameGrape/poly2d/issues"
+        "url": "https://github.com/LameGrape/polynode/issues"
     },
-    "homepage": "https://github.com/LameGrape/poly2d#readme",
+    "homepage": "https://github.com/LameGrape/polynode#readme",
     "devDependencies": {
         "electron": "^20.2.0"
     }

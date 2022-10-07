@@ -10,6 +10,9 @@
     --neutral: #527A8C;
     --lightBlue: #38ACFF;
     --dimmerBlue: #2F92D8;
+    --varNumber: #4db14d;
+    --varString: #ad5401;
+    --varBool: rgb(16, 16, 150);
 }
 
 :root.dark {
@@ -58,7 +61,7 @@ winbuttons img:hover {
 #title-poly {
     font-weight: 900;
     font-family: kingthings;
-    color: var(--main);
+    color: #C3D1D8;
     font-size: 18pt;
     margin-left: 8px;
 }
@@ -71,10 +74,116 @@ winbuttons img:hover {
 }
 
 
-/* Canvas */
+/* Nodes */
 
-#canvas {
+node {
+    background: var(--neutral);
+    color: white;
     position: absolute;
-    background: url(../assets/canvas/grid.png);
-    margin: auto;
+    border-radius: 10px;
+    user-select: none;
+}
+
+node-title {
+    background: var(--secondary);
+    display: block;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 15pt;
+    font-weight: bold;
+    line-height: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+node-body {
+    padding: 8px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    display: block;
+}
+
+node-input {
+    display: block;
+    font-size: 14pt;
+}
+
+node-input[optional] {
+    font-style: italic;
+}
+
+node-output {
+    display: block;
+    font-size: 14pt;
+    float: right;
+}
+
+node-input::before {
+    content: "";
+    background: grey;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    position: relative;
+    left: -15px;
+}
+
+node-input[optional]::before {
+    border-radius: 0;
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+}
+
+node-input[type=number]::before {
+    background: var(--varNumber);
+}
+
+node-input[type=string]::before {
+    background: var(--varString);
+}
+
+node-input[type=bool]::before {
+    background: var(--varBool);
+}
+
+node-output::after {
+    content: "";
+    background: grey;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+    position: relative;
+    left: 15px;
+}
+
+node-output[type=number]::after {
+    background: var(--varNumber);
+}
+
+node-output[type=string]::after {
+    background: var(--varString);
+}
+
+node-output[type=bool]::after {
+    background: var(--varBool);
+}
+
+
+/* SVG */
+
+.connection path {
+    fill: transparent;
+    stroke-width: 6px;
+    filter: brightness(150%);
+    stroke-linecap: round;
+    position: absolute;
 }

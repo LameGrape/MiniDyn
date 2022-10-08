@@ -43,6 +43,28 @@ const capitalize = (str, lower = false) =>
     (lower ? str.toLowerCase() : str).replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
 
 document.onmousemove = function(e) {
+    svgs.forEach(item => {
+        if(!item.getAttribute("target")) return
+        if(item.getAttribute("was") == "NODE-OUTPUT"){
+            let target = Array.from(nodein).find(itm => itm.getAttribute("index") == item.getAttribute("target"))
+            let start = Array.from(nodeout).find(itm => itm.getAttribute("index") == item.getAttribute("index"))
+            if(target != undefined && start != undefined){
+                let rect = start.getBoundingClientRect()
+                let tarRect = target.getBoundingClientRect()
+                curveToPoint(item, tarRect.x, tarRect.y + tarRect.height / 2, rect.x + rect.width, rect.y + rect.height / 2)
+            }
+        }
+        else{
+            let target = Array.from(nodeout).find(itm => itm.getAttribute("index") == item.getAttribute("target"))
+            let start = Array.from(nodein).find(itm => itm.getAttribute("index") == item.getAttribute("index"))
+            if(target != undefined && start != undefined){
+                let rect = start.getBoundingClientRect()
+                let tarRect = target.getBoundingClientRect()
+                curveToPoint(item, tarRect.x + tarRect.width, tarRect.y + tarRect.height / 2, rect.x, rect.y + rect.height / 2)
+            }
+        }
+    })
+
     if (focusedNode) {
         mouseMove = { x: e.movementX, y: e.movementY }
         focusedNode.style.left = parseInt(focusedNode.style.left.replace("px", "")) + mouseMove.x + "px"
@@ -69,7 +91,23 @@ document.onmousemove = function(e) {
         curveToPoint(svg, e.clientX, e.clientY, rect.x + rect.width, rect.y + rect.height / 2)
     }
 }
-document.onmouseup = () => {
+document.onmouseup = (e) => {
     focusedNode = null
+
+    if(focusedPut){
+        let svg = svgs.find((item) => item.getAttribute("index") == focusedPut.getAttribute("index") && item.getAttribute("was") == focusedPut.tagName)
+        let target = document.elementsFromPoint(e.clientX, e.clientY).find(item => item.getAttribute("type") != null && item.getAttribute("index") != null)
+        if(target != null
+            && target.tagName != focusedPut.tagName
+            && target.getAttribute("type") == focusedPut.getAttribute("type")
+            && target.parentElement != focusedPut.parentElement){
+            svg.setAttribute("target", target.getAttribute("index"))
+        }
+        else{
+            svgs.splice(svgs.indexOf(svg), 1)
+            document.getElementById("svgs").removeChild(svg)
+        }
+    }
+
     focusedPut = null
 }

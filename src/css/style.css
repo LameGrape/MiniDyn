@@ -131,6 +131,7 @@ node-input::before {
     vertical-align: middle;
     position: relative;
     left: -15px;
+    z-index: 150;
 }
 
 node-input[optional]::before {
@@ -163,6 +164,7 @@ node-output::after {
     vertical-align: middle;
     position: relative;
     left: 15px;
+    z-index: 150;
 }
 
 node-output[type=number]::after {
@@ -182,11 +184,14 @@ node-output[type=bool]::after {
 
 .connection {
     position: absolute;
-    z-index: -10;
+    z-index: 100;
+    pointer-events: none;
 }
 
 .connection path {
     fill: transparent;
     stroke-width: 6px;
     stroke-linecap: round;
+    stroke-opacity: 50%;
+    filter: brightness(150%)
 }

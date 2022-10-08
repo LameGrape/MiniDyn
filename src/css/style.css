@@ -180,10 +180,13 @@ node-output[type=bool]::after {
 
 /* SVG */
 
+.connection {
+    position: absolute;
+    z-index: -10;
+}
+
 .connection path {
     fill: transparent;
     stroke-width: 6px;
-    filter: brightness(150%);
     stroke-linecap: round;
-    position: absolute;
 }

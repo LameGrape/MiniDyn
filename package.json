@@ -1,18 +1,18 @@
 {
-    "name": "polynode",
+    "name": "depthlib",
     "version": "0.1.0",
-    "description": "Electron game engine",
+    "description": "From the Depths modding application",
     "main": "main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "repository": "LameGrape/polynode",
+    "repository": "LameGrape/DepthLib",
     "author": "EpicRaisin",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/LameGrape/polynode/issues"
+        "url": "https://github.com/LameGrape/DepthLib/issues"
     },
-    "homepage": "https://github.com/LameGrape/polynode#readme",
+    "homepage": "https://github.com/LameGrape/DepthLib#readme",
     "devDependencies": {
         "electron": "^20.2.0"
     }

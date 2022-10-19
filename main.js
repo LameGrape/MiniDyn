@@ -5,8 +5,8 @@ const path = require("path")
 const createWindow = () => {
     const window = new electron.BrowserWindow({
         frame: false,
-        width: 1068,
-        height: 600,
+        width: 1600,
+        height: 900,
         minHeight: 40,
         minWidth: 300,
         webPreferences: {

@@ -1,30 +1,44 @@
 @font-face {
-    font-family: kingthings;
-    src: url("../assets/Kingthings Clarity.TTF");
+    font-family: NotoSans;
+    src: url("../assets/fonts/NotoSansDisplay-Regular.ttf");
 }
 
-:root,
- :root.light {
-    --main: #C3D1D8;
-    --secondary: #8EA6B2;
-    --neutral: #527A8C;
-    --lightBlue: #38ACFF;
-    --dimmerBlue: #2F92D8;
-    --varNumber: #4db14d;
-    --varString: #ad5401;
-    --varBool: rgb(16, 16, 150);
+@font-face {
+    font-family: NotoSans-Bold;
+    src: url("../assets/fonts/NotoSansDisplay-Bold.ttf");
 }
 
-:root.dark {
-    --main: #27363D;
-    --secondary: #415A66;
+@font-face {
+    font-family: NotoSans-Italic;
+    src: url("../assets/fonts/NotoSansDisplay-Italic.ttf")
+}
+
+@font-face {
+    font-family: NotoSans-BoldItalic;
+    src: url("../assets/fonts/NotoSansDisplay-BoldItalic.ttf");
+}
+
+:root {
+    --main: #1B283D;
+    --secondary: #C9CED2;
+    --trim: #2179FF;
+    --btn-neutral: #4471D3;
+    --neutral-border: #15263D;
+    --btn-positive: #3FD748;
+    --positive-border: #134119;
+    --btn-negative: #D34245;
+    --negative-border: #3E1618;
 }
 
 body {
-    margin-top: 48px;
-    font-family: sans-serif;
+    margin-top: 40px;
+    font-family: NotoSans;
     background: var(--main);
     overflow: hidden;
+}
+
+::selection {
+    background: #ED9E9F;
 }
 
 
@@ -35,9 +49,9 @@ titlebar {
     position: fixed;
     top: 0px;
     left: 0px;
-    background: var(--neutral);
+    background: #0E1521;
     width: 100vw;
-    height: 40px;
+    height: 32px;
     user-select: none;
     -webkit-app-region: drag;
 }
@@ -58,140 +72,61 @@ winbuttons img:hover {
     filter: brightness(75%);
 }
 
-#title-poly {
-    font-weight: 900;
-    font-family: kingthings;
-    color: #C3D1D8;
-    font-size: 18pt;
-    margin-left: 8px;
-}
-
-#title-2d {
-    font-weight: 900;
-    font-family: kingthings;
-    color: var(--lightBlue);
-    font-size: 18pt;
-}
-
-
-/* Nodes */
-
-node {
-    background: var(--neutral);
+#title-name {
+    font-family: NotoSans;
     color: white;
-    position: absolute;
-    border-radius: 10px;
-    user-select: none;
-}
-
-node-title {
-    background: var(--secondary);
-    display: block;
-    width: 100%;
-    height: 30px;
-    padding: 5px;
-    box-sizing: border-box;
     font-size: 15pt;
-    font-weight: bold;
-    line-height: 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    margin-left: 5px;
 }
 
-node-body {
+
+/* Buttons */
+
+button {
     padding: 8px;
-    padding-top: 5px;
-    padding-bottom: 30px;
-    display: block;
+    outline: 2px solid;
+    outline-color: var(--neutral-border);
+    outline-offset: -3px;
+    border: none;
+    border-radius: 15px;
+    background: var(--btn-neutral);
+    color: white;
+    font-size: 12pt;
 }
 
-node-input {
-    display: block;
-    font-size: 14pt;
+button.red {
+    background: var(--btn-negative);
+    outline-color: var(--negative-border);
 }
 
-node-input[optional] {
-    font-style: italic;
-}
-
-node-output {
-    display: block;
-    font-size: 14pt;
-    float: right;
-}
-
-node-input::before {
-    content: "";
-    background: grey;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    vertical-align: middle;
-    position: relative;
-    left: -15px;
-    z-index: 150;
-}
-
-node-input[optional]::before {
-    border-radius: 0;
-    transform: rotate(45deg);
-    width: 12px;
-    height: 12px;
-}
-
-node-input[type=number]::before {
-    background: var(--varNumber);
-}
-
-node-input[type=string]::before {
-    background: var(--varString);
-}
-
-node-input[type=bool]::before {
-    background: var(--varBool);
-}
-
-node-output::after {
-    content: "";
-    background: grey;
-    display: inline-block;
-    border: 1px solid black;
-    border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    vertical-align: middle;
-    position: relative;
-    left: 15px;
-    z-index: 150;
-}
-
-node-output[type=number]::after {
-    background: var(--varNumber);
-}
-
-node-output[type=string]::after {
-    background: var(--varString);
-}
-
-node-output[type=bool]::after {
-    background: var(--varBool);
+button.green {
+    background: var(--btn-positive);
+    outline-color: var(--positive-border);
+    color: black;
 }
 
 
-/* SVG */
+/* Inputs */
 
-.connection {
-    position: absolute;
-    z-index: 100;
-    pointer-events: none;
+input {
+    border: 2px solid var(--trim);
+    background: var(--secondary);
+    font-size: 12pt;
+    color: black;
+    padding: 2px;
+    outline: none;
+    caret-color: red;
+    font-family: NotoSans-BoldItalic;
+    margin: 2px;
 }
 
-.connection path {
-    fill: transparent;
-    stroke-width: 6px;
-    stroke-linecap: round;
-    stroke-opacity: 50%;
-    filter: brightness(150%)
+label {
+    user-select: none;
+    border: 2px solid var(--trim);
+    background: var(--secondary);
+    filter: brightness(80%);
+    font-size: 12pt;
+    color: black;
+    padding: 2px;
+    margin: 2px;
 }

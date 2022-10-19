@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>polynode</title>
+    <script src="scripts/misc.js"></script>
+    <title>DepthLib</title>
 </head>
 
 <body>
     <titlebar>
         <wintitle>
-            <span id="title-poly">poly</span><span id="title-2d">node</span>
+            <span id="title-name">DepthLib</span>
         </wintitle>
         <winbuttons>
             <img src="assets/titlebar/minimize.png" id="minimize" onclick="minimize()" ondragstart="return false">
@@ -20,68 +21,10 @@
             <img src="assets/titlebar/close.png" id="close" onclick="quit()" ondragstart="return false">
         </winbuttons>
     </titlebar>
-    
-    <node style="left: 50px; top: 50px;">
-        <node-title>Test node</node-title>
-        <node-body>
-            <node-input type="number">Number Input</node-input>
-            <node-input type="string" optional>String Input</node-input>
-            <node-output type="number">Number Output</node-output>
-        </node-body>
-    </node>
 
-    <node style="left: 50px; top: 50px;">
-        <node-title>Addition</node-title>
-        <node-body>
-            <node-input type="number">A</node-input>
-            <node-input type="number">B</node-input>
-            <node-output type="number">Sum</node-output>
-        </node-body>
-    </node>
+    <sidebar>
 
-    <node style="left: 50px; top: 50px;">
-        <node-title>Log to Console</node-title>
-        <node-body>
-            <node-input type="string">Log message</node-input>
-        </node-body>
-    </node>
-
-    <node style="left: 50px; top: 50px;">
-        <node-title>Translate</node-title>
-        <node-body>
-            <node-input type="number">X</node-input>
-            <node-input type="number">Y</node-input>
-            <node-input type="number">Z</node-input>
-            <node-input type="bool" optional>Relative</node-input>
-        </node-body>
-    </node>
-
-
-    <node style="left: 50px; top: 50px;">
-        <node-title>AND Gate</node-title>
-        <node-body>
-            <node-input type="bool">A</node-input>
-            <node-input type="bool">B</node-input>
-            <node-output type="bool">Result</node-output>
-        </node-body>
-    </node>
-
-    <node style="left: 50px; top: 50px;">
-        <node-title>String</node-title>
-        <node-body>
-            <node-output type="string">Value</node-output>
-        </node-body>
-    </node>
-
-
-    <!-- <svg width="1000" height="1000" xmlns="http://www.w3.org/2000/svg" style="left: 0px; top: 0px;" class="connection">
-        <path d="" stroke="var(--varBool)"/>
-    </svg> -->
-
-    <div id="svgs"></div>
-
-    <script src="scripts/misc.js"></script>
-    <script src="scripts/nodes.js"></script>
+    </sidebar>
 </body>
 
 </html>

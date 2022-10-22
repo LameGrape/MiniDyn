@@ -1,0 +1,21 @@
+assembly : %root%/StickFight_Data/Managed/
+
+%profile% < %assembly%/Assembly-CSharp.dll
+
+switch
+[
+    %profile%/Assembly-CSharp.dll > %assembly%0
+    ! %root%/BepInEx/
+    ! %root%/winhttp.dll
+]
+
+run
+[
+    steam 674940
+]
+
+check
+[
+    ?! %root%/BepInEx/
+    crc32 8A686EC6 %assembly%/Assembly-CSharp.dll
+]

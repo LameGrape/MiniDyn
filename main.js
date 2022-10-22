@@ -15,6 +15,7 @@ const createWindow = () => {
         },
         icon: path.join(__dirname, 'build/icon.png')
     })
+
     const ipc = electron.ipcMain
     ipc.on("maximize", () => {
         if (window.isMaximized()) {

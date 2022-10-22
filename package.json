@@ -1,18 +1,15 @@
 {
-    "name": "depthlib",
-    "version": "0.1.0",
-    "description": "From the Depths modding application",
+    "name": "sulfur-launcher",
+    "version": "0.1.1",
+    "description": "A universal mod profile manager that works for any game.",
     "main": "main.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "repository": "LameGrape/DepthLib",
+    "repository": "LameGrape/SulFur",
     "author": "EpicRaisin",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/LameGrape/DepthLib/issues"
+        "url": "https://github.com/LameGrape/SulFur/issues"
     },
-    "homepage": "https://github.com/LameGrape/DepthLib#readme",
+    "homepage": "https://github.com/LameGrape/SulFur#readme",
     "devDependencies": {
         "electron": "^20.2.0"
     }

@@ -1,44 +1,15 @@
-@font-face {
-    font-family: NotoSans;
-    src: url("../assets/fonts/NotoSansDisplay-Regular.ttf");
-}
-
-@font-face {
-    font-family: NotoSans-Bold;
-    src: url("../assets/fonts/NotoSansDisplay-Bold.ttf");
-}
-
-@font-face {
-    font-family: NotoSans-Italic;
-    src: url("../assets/fonts/NotoSansDisplay-Italic.ttf")
-}
-
-@font-face {
-    font-family: NotoSans-BoldItalic;
-    src: url("../assets/fonts/NotoSansDisplay-BoldItalic.ttf");
-}
-
 :root {
-    --main: #1B283D;
-    --secondary: #C9CED2;
-    --trim: #2179FF;
-    --btn-neutral: #4471D3;
-    --neutral-border: #15263D;
-    --btn-positive: #3FD748;
-    --positive-border: #134119;
-    --btn-negative: #D34245;
-    --negative-border: #3E1618;
+    --main: #222C36;
+    --secondary: #030B2E;
+    --trim: #47A3E5;
 }
 
 body {
     margin-top: 40px;
-    font-family: NotoSans;
+    font-family: sans-serif;
     background: var(--main);
     overflow: hidden;
-}
-
-::selection {
-    background: #ED9E9F;
+    color: white;
 }
 
 
@@ -49,11 +20,13 @@ titlebar {
     position: fixed;
     top: 0px;
     left: 0px;
-    background: #0E1521;
+    background: var(--secondary);
     width: 100vw;
     height: 32px;
     user-select: none;
     -webkit-app-region: drag;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 winbuttons {
@@ -73,60 +46,47 @@ winbuttons img:hover {
 }
 
 #title-name {
-    font-family: NotoSans;
     color: white;
-    font-size: 15pt;
-    margin-left: 5px;
+    font-size: 13pt;
+}
+
+#title-name img {
+    vertical-align: middle;
+    position: relative;
+    top: -2px;
 }
 
 
-/* Buttons */
+/* Sidebar */
 
-button {
-    padding: 8px;
-    outline: 2px solid;
-    outline-color: var(--neutral-border);
-    outline-offset: -3px;
-    border: none;
-    border-radius: 15px;
-    background: var(--btn-neutral);
-    color: white;
-    font-size: 12pt;
-}
-
-button.red {
-    background: var(--btn-negative);
-    outline-color: var(--negative-border);
-}
-
-button.green {
-    background: var(--btn-positive);
-    outline-color: var(--positive-border);
-    color: black;
-}
-
-
-/* Inputs */
-
-input {
-    border: 2px solid var(--trim);
+#topbar {
     background: var(--secondary);
-    font-size: 12pt;
-    color: black;
-    padding: 2px;
-    outline: none;
-    caret-color: red;
-    font-family: NotoSans-BoldItalic;
-    margin: 2px;
+    position: absolute;
+    left: 0px;
+    top: 32px;
+    height: 78px;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
-label {
+tab {
+    display: inline-block;
+    box-sizing: border-box;
+    height: 78px;
+    width: 78px;
+    padding: 7px;
+    margin-left: 16px;
+}
+
+tab.selected {
+    border-bottom: 4px solid var(--trim);
+}
+
+tab img {
+    height: 64px;
     user-select: none;
-    border: 2px solid var(--trim);
-    background: var(--secondary);
-    filter: brightness(80%);
-    font-size: 12pt;
-    color: black;
-    padding: 2px;
-    margin: 2px;
+}
+
+tab:hover img {
+    filter: brightness(125%);
 }

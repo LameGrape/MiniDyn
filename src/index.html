@@ -7,24 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <script src="scripts/misc.js"></script>
-    <title>DepthLib</title>
+    <script src="scripts/tabs.js"></script>
+    <title>SulFur Launcher</title>
 </head>
 
 <body>
     <titlebar>
         <wintitle>
-            <span id="title-name">DepthLib</span>
+            <span id="title-name"><img src="../build/icon.png" height="24"> SulFur Launcher - Stick Fight - Dedicated Server</span>
         </wintitle>
         <winbuttons>
-            <img src="assets/titlebar/minimize.png" id="minimize" onclick="minimize()" ondragstart="return false">
-            <img src="assets/titlebar/maximize.png" id="maximize" onclick="maximize()" ondragstart="return false">
-            <img src="assets/titlebar/close.png" id="close" onclick="quit()" ondragstart="return false">
+            <img src="assets/titlebar/minimize.png" id="minimize" onclick="minimize()" title="Minimize" ondragstart="return false">
+            <img src="assets/titlebar/maximize.png" id="maximize" onclick="maximize()" title="Maximize" ondragstart="return false">
+            <img src="assets/titlebar/close.png" id="close" onclick="quit()" title="Close" ondragstart="return false">
         </winbuttons>
     </titlebar>
 
-    <sidebar>
-
-    </sidebar>
+    <div id="topbar">
+        <tab tabid="sf" + onclick="tabSelect(this)">
+            <img src="assets/topbar/sf-a.png" alt="SF">
+        </tab>
+        <tab tabid="sfds" onclick="tabSelect(this)">
+            <img src="assets/topbar/sfds.png" alt="SFDS">
+        </tab>
+        <tab tabid="sm" onclick="tabSelect(this)">
+            <img src="assets/topbar/sm.png" alt="SM">
+        </tab>
+    </div>
 </body>
 
 </html>
